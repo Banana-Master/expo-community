@@ -10,7 +10,7 @@ const InputField = ({ label, variant = 'filled', ...props }: InputFieldProps) =>
   return (
     <View>
       {label && <Text style={styles.label}>{label}</Text>}
-      <View style={(styles.container, styles[variant])}>
+      <View style={[styles.container, styles[variant]]}>
         <TextInput placeholderTextColor={colors.GRAY_500} style={styles.input} {...props} />
       </View>
     </View>
