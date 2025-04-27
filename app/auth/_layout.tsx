@@ -22,6 +22,13 @@ const AuthLayout = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="login"
+        options={{
+          title: '이메일 로그인',
+          headerShown: true,
+        }}
+      />
     </Stack>
   );
 };
