@@ -11,7 +11,7 @@ const AuthScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <CustomButton label="이메일 로그인" onPress={() => router.push('/auth/login')} />
-        <Link href={'/'} style={styles.signupText}>
+        <Link href={'/auth/signup'} style={styles.signupText}>
           이메일로 가입하기
         </Link>
       </View>
