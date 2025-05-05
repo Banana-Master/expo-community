@@ -8,7 +8,7 @@ const dummyData = [
     userId: 1,
     title: '더미 제목 입니다.',
     description: '더미 내용 입니다.',
-    createdAt: '',
+    createdAt: '2025-01-01',
     author: {
       id: 1,
       nickname: '닉네임',
@@ -26,7 +26,7 @@ const dummyData = [
     userId: 1,
     title: '더미 제목 입니다.',
     description: '더미 내용 입니다.',
-    createdAt: '',
+    createdAt: '2025-02-01',
     author: {
       id: 1,
       nickname: '닉네임',
