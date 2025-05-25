@@ -29,7 +29,7 @@ const SignupScreen = () => {
     <FormProvider {...signupForm}>
       <View style={styles.container}>
         <EmailInput />
-        <PasswordInput />
+        <PasswordInput submitBehavior="submit" />
         <PasswordConfirmInput />
       </View>
       <FixedBottomCTA label="회원가입하기" onPress={signupForm.handleSubmit(onSubmit)} />
