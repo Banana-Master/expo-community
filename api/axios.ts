@@ -2,8 +2,8 @@ import axios from 'axios';
 import { Platform } from 'react-native';
 
 const baseURLs = {
-  android: 'http://192.168.219.103:3030',
-  ios: 'http://192.168.219.103:3030',
+  android: 'http://expo-community-server.sunghoyaaa.com',
+  ios: 'http://expo-community-server.sunghoyaaa.com',
 };
 
 export const axiosInstance = axios.create({
