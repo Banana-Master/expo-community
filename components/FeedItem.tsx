@@ -3,13 +3,16 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { Post } from '@/types';
 import Profile from './Profile';
+import { useAuth } from '@/hooks/queries/useAuth';
 
 interface FeedItemProps {
   post: Post;
 }
 
 const FeedItem = ({ post }: FeedItemProps) => {
-  const isLiked = false;
+  const { auth } = useAuth();
+  const likeUsers = post.likes?.map((like) => Number(like.userId));
+  const isLiked = likeUsers?.includes(Number(auth.id));
 
   return (
     <View style={styles.container}>
@@ -32,7 +35,9 @@ const FeedItem = ({ post }: FeedItemProps) => {
             size={16}
             color={isLiked ? colors.ORANGE_600 : colors.BLACK}
           />
-          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>1</Text>
+          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>
+            {post.likes.length || '좋아요'}
+          </Text>
         </Pressable>
         <Pressable style={styles.menu}>
           <MaterialCommunityIcons
@@ -40,11 +45,13 @@ const FeedItem = ({ post }: FeedItemProps) => {
             size={16}
             color={colors.BLACK}
           />
-          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>1</Text>
+          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>
+            {post.commentCount || '댓글'}
+          </Text>
         </Pressable>
         <Pressable style={styles.menu}>
           <Ionicons name="eye-outline" size={16} color={colors.BLACK} />
-          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>1</Text>
+          <Text style={isLiked ? styles.activeMenuText : styles.menuText}>{post.viewCount}</Text>
         </Pressable>
       </View>
     </View>
