@@ -6,7 +6,6 @@ import { deleteSecureStore, getSecureStore, saveSecureStore } from '@/utils/secu
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import { useEffect } from 'react';
-import { set } from 'react-hook-form';
 
 const useGetMe = () => {
   const { data, isError, isSuccess } = useQuery({
